@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- Google Signup/signin script  -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Google Auth</title>
+  </head>
+  <body>
+    <button onclick="handleClick()">Auth</button>
+    <script type="text/javascript">
+      const handleClick = async () => {
+        try {
+          const response = await fetch("http://localhost:3001/auth", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error("Fetch error:", error);
+        }
+      };
+    </script>
+  </body>
+</html>
