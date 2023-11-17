@@ -16,6 +16,8 @@ const oauth2Client = new google.auth.OAuth2(
 const scopes = [
   "https://www.googleapis.com/auth/calendar",
   "https://www.googleapis.com/auth/gmail.readonly",
+  "https://www.googleapis.com/auth/userinfo.profile",
+  "https://www.googleapis.com/auth/userinfo.email",
 ];
 
 // Generate a url that asks permissions for the Calendar scope
@@ -28,5 +30,5 @@ const authorizationUrl = oauth2Client.generateAuthUrl({
   // Enable incremental authorization. Recommended as a best practice.
   include_granted_scopes: true,
 });
-console.log(authorizationUrl);
+
 module.exports = { oauth2Client, authorizationUrl };
