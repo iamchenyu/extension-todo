@@ -9,7 +9,7 @@ mongoose
   })
   .then(async () => {
     app.listen(PORT, () => {
-      console.log(`Clients Tracker App is listening on PORT ${PORT}`);
+      console.log(`Extension-todo App is listening on PORT ${PORT}`);
     });
   })
   .catch((error) => console.log(`${error} - did not connect`));

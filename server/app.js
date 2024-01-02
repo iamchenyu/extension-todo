@@ -4,6 +4,7 @@ const cors = require("cors");
 const NotFoundError = require("./ExpressError");
 const authRoutes = require("./routes/auth");
 const calendarRoutes = require("./routes/calendar");
+const promptRoutes = require("./routes/prompt")
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/calendar", calendarRoutes);
-
+app.use("/prompt", promptRoutes);
 // app.use((req, res, next) => {
 //   return next(new NotFoundError("Page not found"));
 // });
